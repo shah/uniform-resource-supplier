@@ -1,9 +1,9 @@
 {
-    "name": "@shah/uniform-resource",
+    "name": "@shah/uniform-resource-supplier",
     "version": "0.5.1",
     "description": "Uniform resource suppliers and consumers for content orchestration engines",
-    "main": "dist/uniform-resource.js",
-    "types": "dist/uniform-resource.d.ts",
+    "main": "dist/uniform-resource-supplier.js",
+    "types": "dist/uniform-resource-supplier.d.ts",
     "files": [
         "dist"
     ],
@@ -13,7 +13,7 @@
         "test": "alsatian './**/*.spec.ts'"
     },
     "repository": {
-        "url": "git://github.com/shah/uniform-resource.git"
+        "url": "git://github.com/shah/uniform-resource-supplier.git"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
@@ -27,18 +27,12 @@
     "license": "MIT",
     "dependencies": {
         "@shah/uniform-resource": "0.6.0",
-        "@shah/traverse-urls": "0.5.0",
-        "@shah/ts-cache": "0.0.2",
-        "@mozilla/readability": "^0.3.0",
-        "@postlight/mercury-parser": "^2.2.0",
-        "cheerio": "^1.0.0-rc.3",
-        "jsdom": "^16.4.0",
         "whatwg-mimetype": "^2.3.0"
     },
     "bugs": {
-        "url": "https://github.com/shah/uniform-resource/issues"
+        "url": "https://github.com/shah/uniform-resource-supplier/issues"
     },
-    "homepage": "https://github.com/shah/uniform-resource",
+    "homepage": "https://github.com/shah/uniform-resource-supplier",
     "devDependencies": {
         "@types/cheerio": "^0.22.21",
         "@types/mozilla-readability": "^0.2.0",

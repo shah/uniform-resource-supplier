@@ -1,10 +1,8 @@
-import * as tru from "@shah/traverse-urls";
-import { Cache, lruCache } from "@shah/ts-cache";
+import * as ur from "@shah/uniform-resource";
 import { Expect, Test, TestCase, TestFixture, Timeout } from "alsatian";
 import * as fs from "fs";
 import mime from "whatwg-mimetype";
 import * as urs from "./uniform-resource-supplier";
-import * as ur from "@shah/uniform-resource";
 
 @TestFixture("Uniform Resource Test Suite")
 export class TestSuite {
