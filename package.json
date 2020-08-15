@@ -35,12 +35,8 @@
     },
     "homepage": "https://github.com/shah/uniform-resource-supplier",
     "devDependencies": {
-        "@types/cheerio": "^0.22.21",
-        "@types/mozilla-readability": "^0.2.0",
         "@types/node": "^14.0.26",
-        "@types/postlight__mercury-parser": "^2.2.2",
         "@types/whatwg-mimetype": "^2.1.0",
-        "@types/jsdom": "^16.2.3",
         "alsatian": "^3.2.1",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.7"
