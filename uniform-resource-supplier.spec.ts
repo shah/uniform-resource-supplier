@@ -3,6 +3,7 @@ import { Expect, Test, TestCase, TestFixture, Timeout } from "alsatian";
 import * as fs from "fs";
 import mime from "whatwg-mimetype";
 import * as urs from "./uniform-resource-supplier";
+import * as p from "@shah/ts-pipe";
 
 @TestFixture("Uniform Resource Test Suite")
 export class TestSuite {
@@ -16,8 +17,8 @@ export class TestSuite {
 
         const testURN = `test:${base64EncodedHtmlFileName}`;
         const frc = new urs.FilteredResourcesCounter();
-        const contentTr = ur.contentTransformationPipe(ur.EnrichQueryableHtmlContent.singleton);
-        const htmlContent = await contentTr.transform({
+        const contentPipe = p.pipe(ur.EnrichQueryableHtmlContent.singleton);
+        const htmlContent = await contentPipe.flow({
             uri: testURN,
             htmlSource: Buffer.from(base64Content.toString(), 'base64').toString()
         }, {
@@ -29,7 +30,7 @@ export class TestSuite {
             filter: urs.filterPipe(
                 new urs.BlankLabelFilter(frc.reporter("Blank label")),
                 new urs.BrowserTraversibleFilter(frc.reporter("Not traversible"))),
-            unifResourceTr: ur.resourceTransformationPipe(
+            unifResourceTr: p.pipe(
                 ur.RemoveLabelLineBreaksAndTrimSpaces.singleton,
                 ur.FollowRedirectsGranular.singleton,
                 ur.RemoveTrackingCodesFromUrl.singleton)

@@ -145,7 +145,7 @@ export class TypicalResourcesSupplier implements ur.UniformResourceProvenance, U
             }
         }
         if (this.unifResourceTr) {
-            const transformed = await this.unifResourceTr.transform(ctx, original);
+            const transformed = await this.unifResourceTr.flow(ctx, original);
             if (this.filter && this.filter.retainTransformed) {
                 if (!this.filter.retainTransformed(ctx, transformed)) {
                     return undefined;
